@@ -11,6 +11,7 @@
 ## Dependencies
 ### Necessary Dependencies
 *Note: It is quite feasible that some dependencies are missing because I'm a fool.*
+
 Most dependencies can be installed easily using a package manager. It is assumed you are using an Arch based distro. If not, package names may differ and you may need to find other ways to install dependencies that would be installed using an AUR helper.
 ```
 # pacman -S git fish kitty neovim ranger dmenu qutebrowser scrot redshift libnotify picom pcmanfm feh zathura xorg-setxkbmap geoclue2 exa imagemagick xcolor neofetch discord steam
@@ -29,25 +30,25 @@ These dependencies are not necessary, but I would want them if I were to be sett
 $ yay -S spotify oomox
 ```
 ## Installation
-1. Set up fish shell
+**1.** Set up fish shell
 
-	1.1. Set fish as your default shell: `# chsh -s /usr/bin/fish`
+	**1.1.** Set fish as your default shell: `# chsh -s /usr/bin/fish`
 	
-	1.2. Install [fisher](https://github.com/jorgebucaran/fisher)
+	**1.2.** Install [fisher](https://github.com/jorgebucaran/fisher)
 
-	1.3. Install [z](https://github.com/jethrokuan/z)
+	**1.3.** Install [z](https://github.com/jethrokuan/z)
 
-2. Installing dotfiles
+**2.** Installing dotfiles
 
-	2.1. Clone this repository into your home directory: `$ git clone https://github.com/bean499/dotfiles .`
+	**2.1.** Clone this repository into your home directory: `$ git clone https://github.com/bean499/dotfiles .`
 
-	2.2. Update the submodules: `$ git submodule update --init --recursive`
+	**2.2.** Update the submodules: `$ git submodule update --init --recursive`
 
-3. Installing dwm
+**3.** Installing dwm
 
-	3.1. Change directory into the dwm folder: `$ cd dwm`
+	**3.1.** Change directory into the dwm folder: `$ cd dwm`
 
-	3.2. Install dwm using the install script: `$ ./install.sh`
+	**3.2.** Install dwm using the install script: `$ ./install.sh`
 
 ## Usage and Modification
 - Programs are set to use the monospace font, so change the font in `~/.config/fontconfig/fonts.conf` to what you desire
