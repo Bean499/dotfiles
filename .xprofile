@@ -1,0 +1,19 @@
+xrdb ~/.xresources &
+setxkbmap -layout us &
+feh --bg-fill $wallpaper &
+picom --experimental-backend -b &
+dunst &
+/usr/lib/geoclue-2.0/demos/agent &
+redshift-gtk &
+#tor &
+nm-applet &
+xfce4-power-manager &
+eww daemon &
+
+~/.scripts/theming/restore-wallpaper.sh &
+~/.scripts/screenlayouts/both.sh &
+~/.scripts/notifications/battery.sh &
+#~/.scripts/notifications/now-playing.sh &
+#~/.scripts/notifications/update-notify.sh
+
+#notify-send -t 0 "Don't forget to check your to-do list!"

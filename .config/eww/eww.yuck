@@ -1,0 +1,109 @@
+; VARIABLES {{{
+
+;; Profile
+(defvar FACE "/home/bean/.face")
+(defpoll NAME :interval "10h" `whoami`)
+(defpoll HOST :interval "10h" `hostnamectl | grep Static | awk '{print $3}'`)
+
+;; Resources
+(defpoll BAT :interval "5s" `acpi -b | grep -P -o '[0-9]+(?=%)'`)
+(defpoll MEM :interval "5s" `printf "%.0f" $(free -m | grep Mem | awk '{print ($3/$2)*100}')`)
+(defpoll CPU :interval "5s" `awk -v a="$(awk '/cpu /{print $2+$4,$2+$4+$5}' /proc/stat; sleep 1)" '/cpu /{split(a,b," "); print 100*($2+$4-b[1])/($2+$4+$5-b[2])}'  /proc/stat`)
+
+;; Uptime
+(defpoll UPHOUR :interval "5s" `uptime -p | awk '{print $2 \" \" $3}' | sed 's/,//g'`)
+(defpoll UPMIN :interval "5s" `uptime -p | awk '{print $4 \" \" $5}'`)
+
+;; Music
+(defpoll ART :interval "1s" `playerctl metadata mpris:artUrl`)
+(defpoll ALBUM :interval "1s" `playerctl metadata album`)
+(defpoll TITLE :interval "1s" `playerctl metadata title`)
+(defpoll ARTIST :interval "1s" `playerctl metadata artist`)
+
+;; Clock
+(defpoll TIME :interval "0.5s" `date +%H:%M:%S`)
+(defpoll DATE :interval "0.5s" `date +%d/%m/%Y`)
+;; }}}
+
+;; WIDGETS {{{
+(defwidget profile []
+	(box :orientation "v" :spacing 0 :space-evenly "false" :vexpand "false" :hexpand "false"
+		(image :class "face" :halign "center" :path FACE :image-height 210 :image-width 210)
+		(label :class "name" :text NAME)
+		(label :class "host" :text HOST)
+		(label :class "up" :text "uptime: ${UPHOUR} ${UPMIN}")
+		(box
+			(button :class "menu-button" :width 35 :height 35 :onclick `systemctl poweroff` "⏻")
+			(button :class "menu-button" :width 35 :height 35 :onclick `systemctl reboot` "")
+			(button :class "menu-button" :width 35 :height 35 :onclick `systemctl suspend` "☃")
+			(button :class "menu-button" :width 35 :height 35 :onclick `eww close-all && betterlockscreen --lock` "")
+			(button :class "menu-button" :width 35 :height 35 :onclick `kill -9 -1` ""))))
+
+(defwidget music []
+	(box :orientation "h" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false"
+		(image :class "art" :path "/usr/share/icons/ePapirus-Dark/64x64/devices/blueman-loudspeaker.svg" :image-width 64 :image-height 64)
+		;;(label :text l")
+		(box :class "musicinfo" :orientation "v" :spacing 10 :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center"
+			(label :class "title" :wrap "true" :yalign 0.5 :xalign 0 :text TITLE)
+			(label :wrap "true" :yalign 0.5 :xalign 0 :text ALBUM)
+			(label :wrap "true" :yalign 0.5 :xalign 0 :text ARTIST))))
+
+(defwidget resources [] 
+	(box :vexpand "false" :hexpand "false" 
+		(box :orientation "v" :spacing 20 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false" 
+			(box :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false" 
+				(label :class "meterlabel" :text "cpu" :valign "center")
+				(progress :class "meter" :value CPU :valign "center"))
+			(box :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false" 
+				(label :class "meterlabel" :text "mem" :valign "center")
+				(progress :class "meter" :value MEM :valign "center"))
+			(box :orientation "h" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false" 
+				(label :class "meterlabel" :text "bat" :valign "center")
+				(progress :class "meter" :value BAT :valign "center")))))
+
+(defwidget shortcuts []
+	(box :orientation "v" :spacing 0 :space-evenly "false" :hexpand "false" :vexpand "false" :valign "center" :halign "center"
+		(box :width 20 :height 20 :halign "center" :valign "center" :vexpand "false" :hexpand "false"
+			(button :class "shortcut" :onclick `./scripts/open_apps.sh vim` ""))
+		(box :width 20 :height 20 :halign "center" :valign "center" :vexpand "false" :hexpand "false"
+			(button :class "shortcut" :onclick `./scripts/open_apps.sh steam` ""))
+		(box :width 20 :height 20 :halign "center" :valign "center" :vexpand "false" :hexpand "false"
+			(button :class "shortcut" :onclick `./scripts/open_apps.sh spotify` ""))
+		(box :width 20 :height 20 :halign "center" :valign "center" :vexpand "false" :hexpand "false"
+			(button :class "shortcut" :onclick `./scripts/open_apps.sh qb` "qb"))))
+		;;(button :class "shortcut" :onclick `discord` "disco")))
+		;;(button :class "shortcut" :onclick `spotify` "disco")))
+
+(defwidget clock []
+	(box :class "clock" :orientation "h" :spacing 50 :space-evenly "false" :valign "center" :halign "center"
+	(label :text TIME)
+	(label :class "clockicon" :text "")
+	(label :text DATE)))
+;; }}}
+
+;; WINDOWS {{{
+(defwindow profile :focusable "false"
+	:monitor 0
+	:geometry (geometry :x -270 :y 0 :width 340 :height 400 :anchor "center")
+	(profile))
+
+(defwindow music :focusable "false"
+	:monitor 0
+	:geometry (geometry :x 220 :y -45 :width 400 :height 150 :anchor "center")
+	(music))
+
+(defwindow resources :focusable "false"
+	:monitor 0
+	:geometry (geometry :x 170 :y 125 :width 500 :height 150 :anchor "center")
+	(resources))
+
+(defwindow shortcuts :focusable "false"
+	:monitor 0
+	:geometry (geometry :x -40 :y -85 :width 80 :height 230 :anchor "center")
+	(shortcuts))
+
+(defwindow clock :focusable "false"
+	:monitor 0
+	:geometry (geometry :x 220 :y -170 :width 400 :height 60 :anchor "center")
+	(clock))
+;; }}}

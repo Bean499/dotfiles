@@ -1,0 +1,79 @@
+@import "/home/bean/.cache/wal/colors.scss";
+
+.face {
+        // background-size: 150px;
+        // min-height: 150px;
+        // min-width: 150px;
+		border-radius: 50%;
+        margin: 40px 0px 0px 0px;
+		border-width: 10px;
+		border-color: $color1;
+}
+
+.name, .up {
+	margin: 10px 0px 0px 0px
+}
+
+.name, .host {
+	color: $color1;
+}
+
+.name {
+	font-weight: bold;
+}
+
+box, window {
+	background-color: $background;
+}
+
+button {
+	background-color: $color5;
+}
+
+.menu-button {
+	font-family: CozetteVector;
+	font-size: 24px;
+	margin: 20px;
+}
+
+.art {
+	margin: 20px;
+}
+
+.musicinfo {
+	margin: 20px 20px 20px 0px;
+}
+
+.meter {
+	border-radius: 0;
+	min-width: 400px;
+}
+
+.clockicon {
+	color: $color1;
+	font-size: 30px;
+}
+
+progress {
+	background-color: $color5;
+}
+
+.title {
+	color: $color1;
+	font-weight: bold;
+}
+
+.meterlabel {
+	font-size: 20px;
+	border-radius: 0px;
+}
+
+.shortcut {
+	font-family: CozetteVector;
+	font-size: 20px;
+	margin: 10px;
+}
+
+.clock {
+	font-size: 20px;
+}

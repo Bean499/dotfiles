@@ -1,0 +1,21 @@
+[submodule ".config/qutebrowser/dracula"]
+	path = .config/qutebrowser/dracula
+	url = https://github.com/dracula/qutebrowser
+[submodule "/home/bean/.local/share/nvim/site/pack/packer/start/packer.nvim"]
+	path = .local/share/nvim/site/pack/packer/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
+[submodule ".homepage"]
+	path = .homepage
+	url = https://github.com/Bean499/homepage
+[submodule ".local/share/nvim/site/pack/packer/start/packer.nvim"]
+	path = .local/share/nvim/site/pack/packer/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
+[submodule "dwm"]
+	path = dwm
+	url = https://github.com/Bean499/dwm-bean
+[submodule ".config/ranger/plugins/ranger_devicons"]
+	path = .config/ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons
+[submodule ".config/ranger/plugins/ranger_archives"]
+	path = .config/ranger/plugins/ranger_archives
+	url = https://github.com/maximtrp/ranger-archives.git
