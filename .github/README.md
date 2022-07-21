@@ -30,7 +30,7 @@ These dependencies are not necessary, but I would want them if I were to be sett
 $ yay -S spotify oomox
 ```
 ## Installation
-**1.** Set up fish shell
+1. Set up fish shell
 
 	1.1. Set fish as your default shell: `# chsh -s /usr/bin/fish`
 	
