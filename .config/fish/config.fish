@@ -74,7 +74,6 @@ alias todo="nvim ~/Documents/todo.md"
 alias ghcode=~/Documents/github-codes.sh
 
 alias setwall="~/.scripts/theming/wallpaper.sh"
-alias font-update="~/.scripts/theming/fonts/font-update.py"
 alias dunst-update="~/.scripts/theming/dunst-gaps.py"
 
 # Replace base commands with exa
