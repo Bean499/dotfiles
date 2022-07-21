@@ -26,7 +26,7 @@ The following dependencies instead need installing manually. Their respective we
 ### Optional Dependencies
 These dependencies are not necessary, but I would want them if I were to be setting up a new machine. Because of this, this section is mostly intended for my own use.
 ```
-# pacman -S zathura-pdf-mupdf zathura-cb lxappearance gimp lutris galculator htop wine mono blueberry
+# pacman -S gimp zathura-pdf-mupdf zathura-cb lxappearance gimp lutris galculator htop wine mono blueberry
 $ yay -S spotify oomox
 ```
 ## Installation
