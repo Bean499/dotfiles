@@ -1,0 +1,1 @@
+The `.scripts` folder does not contain every single script I use. It contains scripts that are not related to any particular application. For example, the script used to open my EWW dashboard is instead found in `~/.config/eww`.
