@@ -14,7 +14,7 @@ require("packer-config")
 -- Plugins
 require("plugin-config.nvim-autopairs")
 require("plugin-config.nvim-comment")
-require("plugin-config.dashboard-nvim")
+require("plugin-config.dashboard-neo")
 require("plugin-config.ranger-vim")
 require("plugin-config.lualine-nvim")
 require("plugin-config.gitsigns-nvim")
