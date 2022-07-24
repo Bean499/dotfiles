@@ -4,9 +4,10 @@ feh --bg-fill $wallpaper &
 picom --experimental-backend -b &
 dunst &
 /usr/lib/geoclue-2.0/demos/agent &
-redshift-gtk &
+redshift &
+#redshift-gtk &
 #tor &
-nm-applet &
+#nm-applet &
 xfce4-power-manager &
 eww daemon &
 
