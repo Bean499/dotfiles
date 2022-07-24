@@ -67,4 +67,10 @@ return require"packer".startup(function()
 
 	-- Colourschemes
 	use "ellisonleao/gruvbox.nvim"
+
+	-- Vim wiki
+	use "vimwiki/vimwiki"
+	
+	-- Toggle checkboxes on hotkey
+	use "jkramer/vim-checkbox"
 end	)
