@@ -19,6 +19,7 @@ require("plugin-config.ranger-vim")
 require("plugin-config.lualine-nvim")
 require("plugin-config.gitsigns-nvim")
 require("plugin-config.minimap-vim")
+require("plugin-config.vim-checkbox")
 
 -- LSP
 require("lsp-config.language-servers")
