@@ -56,8 +56,8 @@ c.content.autoplay = False
 # Dark mode
 # config.set("colors.webpage.darkmode.enabled",True)
 
-config.bind("b","set-cmd-text :quickmark-load ")
-config.bind("B","quickmark-save")
+# config.bind("b","set-cmd-text :quickmark-load ")
+# config.bind("B","quickmark-save")
 
 # Open in MPV
 # config.bind("m","spawn mpv {url} --force-window --script=~/.config/mpv/mpris.so")
