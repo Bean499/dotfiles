@@ -11,29 +11,26 @@ end
 local home = "/home/bean"
 
 db.custom_center = {
+	{icon = '  ',
+	desc = 'Open Vim Wiki                           ',
+	shortcut = 'LDR w w'},
 	{icon = '  ',
 	desc = 'Load most recent session                ',
-	shortcut = 'LDR d l',
-	action ='SessionLoad'},
-	{icon = '  ',
-	desc = 'Recently opened files                   ',
-	action =  'DashboardFindHistory',
-	shortcut = 'LDR d h'},
+	shortcut = 'LDR d l'},
+	-- {icon = '  ',
+	-- desc = 'Recently opened files                   ',
+	-- shortcut = 'LDR d h'},
 	{icon = '  ',
 	desc = 'Find file                               ',
-	action = 'Telescope find_files find_command=rg,--hidden,--files',
 	shortcut = 'LDR d f'},
 	{icon = '  ',
 	desc = 'Open configuration files                ',
-	action = 'Telescope dotfiles path=' .. home ..'/.config',
 	shortcut = 'LDR d c'},
 	{icon = '  ',
 	desc = 'Create New File                         ',
-	action = 'DashboardNewFile',
 	shortcut = 'LDR d n'},
 	{icon = '  ',
 	desc ='File browser                            ',
-	action =  'Ranger',
 	shortcut = 'LDR f m'},
 }
                   -- table type and in this table you can set icon,desc,shortcut,action keywords. desc must be exist and type is string
@@ -44,6 +41,7 @@ db.custom_center = {
 -- db.custom_footer  -- type can be nil,table or function(must be return table in function)
 
 -- string type
+-- db.preview_command = "cat | gay -n --period 10"
 db.preview_command = "cat | lolcat -F 0.3"
 -- string or function type that mean in function you can dynamic generate height width
 db.preview_file_path = home .. "/.config/nvim/lua/plugin-config/dashboard.cat"
