@@ -34,6 +34,9 @@ export XDG_CACHE_HOME=$HOME/.cache
 export EDITOR=nvim
 export VISUAL=nvim
 
+export SUDO_PROMPT=(cat ~/.scripts/misc/sudo.cat)
+#alias sudo="cat ~/.scripts/misc/sudo.cat & sudo"
+
 set PATH $HOME/.emacs.d/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin
 # }}}
 
@@ -68,6 +71,8 @@ alias open-dashboard="~/.config/eww/scripts/open_dashboard.sh"
 alias powertop="sudo powertop"
 
 alias x="startx"
+
+alias wiki="nvim '+set nonu wrap' '+VimwikiIndex'"
 
 alias todo="nvim ~/Documents/todo.md"
 
@@ -104,7 +109,7 @@ alias catclock="xclock"
 
 # AUTO START X ---------------------------------------------------------------------------- {{{
 if test -z "$DISPLAY"
-	figlet "Welcome" | lolcat
+	figlet "Welcome" | lolcat -F 0.3
 	if test "$XDG_VTNR" -eq "1"
 		echo -en "Loading X Window System..."
 		exec startx
