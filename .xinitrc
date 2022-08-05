@@ -8,6 +8,4 @@
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-while : ; do
-    dwm && break || continue
-done
+exec dwm > ~/.config/dwm.log
