@@ -14,7 +14,7 @@
 
 Most dependencies can be installed easily using a package manager. It is assumed you are using an Arch based distro. If not, package names may differ and you may need to find other ways to install dependencies that would be installed using an AUR helper.
 ```
-# pacman -S git fish kitty neovim ranger dmenu qutebrowser scrot redshift libnotify picom pcmanfm feh zathura xorg-setxkbmap geoclue2 exa imagemagick xcolor neofetch discord steam
+# pacman -S git fish kitty neovim ranger dmenu qutebrowser scrot redshift libnotify picom feh zathura xorg-setxkbmap geoclue2 exa imagemagick xcolor neofetch discord steam
 $ yay -S cozette-ttf pywal-discord farge tty-clock catclock
 $ pip install pywal wal-steam adblock dbus-next hyfetch
 ```
@@ -26,8 +26,8 @@ The following dependencies instead need installing manually. Their respective we
 ### Optional Dependencies
 These dependencies are not necessary, but I would want them if I were to be setting up a new machine. Because of this, this section is mostly intended for my own use.
 ```
-# pacman -S gimp zathura-pdf-mupdf zathura-cb lxappearance gimp lutris galculator htop wine mono blueberry
-$ yay -S spotify oomox
+# pacman -S gimp pcmanfm  zathura-pdf-mupdf zathura-cb lxappearance gimp lutris galculator htop wine mono blueberry
+$ yay -S spotify oomox oneko
 ```
 ## Installation
 1. Set up fish shell
