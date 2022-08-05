@@ -34,7 +34,8 @@ export XDG_CACHE_HOME=$HOME/.cache
 export EDITOR=nvim
 export VISUAL=nvim
 
-export SUDO_PROMPT=(cat ~/.scripts/misc/sudo.cat)
+export SUDO_PROMPT="What's the secret password, $USER? "
+#export SUDO_PROMPT=(echo -e (cat ~/.scripts/misc/skeleton.cat))
 #alias sudo="cat ~/.scripts/misc/sudo.cat & sudo"
 
 set PATH $HOME/.emacs.d/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin
@@ -59,6 +60,7 @@ fish_config theme choose "fish default"
 
 # ALIASES --------------------------------------------------------------------------------- {{{
 alias pac-update="yay -Syu"
+alias pac-count="yay -Q | wc -l"
 alias pac-autoremove="yay -Qdtq | yay -Rs -"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
@@ -67,6 +69,8 @@ alias screenshot="scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
 alias mixtape="clear && mpv https://soundcloud.com/bean499/likes --force-window --script=~/.config/mpv/mpris.so --shuffle"
 
 alias open-dashboard="~/.config/eww/scripts/open_dashboard.sh"
+
+alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 
 alias powertop="sudo powertop"
 
