@@ -10,7 +10,7 @@
 * File manager - ranger
 ## Dependencies
 ### Necessary Dependencies
-*Note: It is quite feasible that some dependencies are missing because I'm a fool.*
+*Important: I have not yet tested this install process, but I am planning on doing it soon. If anything doesn't work, let me know!*
 
 Most dependencies can be installed easily using a package manager. It is assumed you are using an Arch based distro. If not, package names may differ and you may need to find other ways to install dependencies that would be installed using an AUR helper.
 ```
