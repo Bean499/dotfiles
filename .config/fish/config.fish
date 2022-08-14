@@ -23,6 +23,14 @@ function fish_greeting
 	#pokemon-colorscripts -r --no-title
 	#bunnyfetch
 end
+
+function sudo
+    if test "$argv" = !!
+        eval command sudo $history[1]
+    else
+        command sudo $argv
+    end
+end
 # }}}
 
 # VARIABLES ------------------------------------------------------------------------------- {{{
@@ -31,6 +39,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
+export FZF_DEFAULT_OPTS=""
+
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -38,7 +48,7 @@ export SUDO_PROMPT="What's the secret password, $USER? "
 #export SUDO_PROMPT=(echo -e (cat ~/.scripts/misc/skeleton.cat))
 #alias sudo="cat ~/.scripts/misc/sudo.cat & sudo"
 
-set PATH $HOME/.emacs.d/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin
+set PATH $HOME/.emacs.d/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin $HOME/.local/share/gem/ruby/3.0.0/bin
 # }}}
 
 # XDG-NINJA CLEANUP ----------------------------------------------------------------------- {{{
