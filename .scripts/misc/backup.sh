@@ -12,6 +12,8 @@ rsync -avh  ~/vimwiki/ /run/media/bean/BEAN\ VAULT/backups/vimwiki/ --delete
 echo
 rsync -avh  ~/vimwiki_html/ /run/media/bean/BEAN\ VAULT/backups/vimwiki_html/ --delete
 echo
+rsync -avh  ~/Documents/Projects/website/ /run/media/bean/BEAN\ VAULT/backups/website/ --delete
+echo
 
 read -p "Would you like to unmount BEAN VAULT? [Y/n] " yesno
 if [[ "$yesno" != "n" ]]; then
