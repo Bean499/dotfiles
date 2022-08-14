@@ -1,7 +1,7 @@
 xrdb ~/.xresources &
 setxkbmap -layout us &
 feh --bg-fill $wallpaper &
-picom --experimental-backend -b &
+#picom --experimental-backend -b &
 dunst &
 /usr/lib/geoclue-2.0/demos/agent &
 redshift &
@@ -10,10 +10,12 @@ redshift &
 #nm-applet &
 xfce4-power-manager &
 eww daemon &
+/usr/lib/kdeconnectd &
 
 ~/.scripts/theming/restore-wallpaper.sh &
 ~/.scripts/screenlayouts/both.sh &
 ~/.scripts/notifications/battery.sh &
+~/.scripts/notifications/mount-notify.sh &
 #~/.scripts/notifications/now-playing.sh &
 #~/.scripts/notifications/update-notify.sh
 
