@@ -35,7 +35,7 @@
 		(box
 			(button :class "menu-button" :width 35 :height 35 :onclick `systemctl poweroff` "⏻")
 			(button :class "menu-button" :width 35 :height 35 :onclick `systemctl reboot` "")
-			(button :class "menu-button" :width 35 :height 35 :onclick `systemctl suspend` "☃")
+			(button :class "menu-button" :width 35 :height 35 :onclick `sync && systemctl suspend` "☃")
 			(button :class "menu-button" :width 35 :height 35 :onclick `eww close-all && betterlockscreen --lock` "")
 			(button :class "menu-button" :width 35 :height 35 :onclick `kill -9 -1` ""))))
 
