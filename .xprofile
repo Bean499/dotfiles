@@ -12,7 +12,7 @@ xfce4-power-manager &
 eww daemon &
 /usr/lib/kdeconnectd &
 
-~/.scripts/theming/restore-wallpaper.sh &
+~/.fehbg &
 ~/.scripts/screenlayouts/both.sh &
 ~/.scripts/notifications/battery.sh &
 ~/.scripts/notifications/mount-notify.sh &
