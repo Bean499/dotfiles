@@ -8,11 +8,12 @@
 # FISH FUNCTIONS -------------------------------------------------------------------------- {{{
 function fish_prompt
 	#echo -e (set_color green)" ┏"(set_color cyan) $USER@$hostname (set_color blue)"✮"(set_color cyan) (prompt_pwd) (set_color green) "\n ┗━▶ "
-	echo -e (set_color green)$USER(set_color white)" on "(set_color green)$hostname(set_color white)" in "(set_color green)(prompt_pwd)(set_color blue)" ⟩ "
+	#echo -e (set_color green)$USER(set_color white)" on "(set_color green)$hostname(set_color white)" in "(set_color green)(prompt_pwd)(set_color blue)" ⟩ "
+	echo -e (set_color green)(prompt_pwd)(set_color blue)" ⟩ "
 end
 
 function fish_right_prompt
-	echo (set_color white)"["(date '+%H:%M:%S')"]"
+	#echo (set_color white)"["(date '+%H:%M:%S')"]"
 end
 
 function fish_greeting
@@ -22,6 +23,7 @@ function fish_greeting
 	#echo "" && pfetch
 	#pokemon-colorscripts -r --no-title
 	#bunnyfetch
+	cat ~/.scripts/ascii/cat-peekaboo.cat | gay -n -c 24 -i 2d --period 4 && echo
 end
 
 function sudo
@@ -47,8 +49,6 @@ export VISUAL=nvim
 export SUDO_PROMPT="What's the secret password, $USER? "
 #export SUDO_PROMPT=(echo -e (cat ~/.scripts/misc/skeleton.cat))
 #alias sudo="cat ~/.scripts/misc/sudo.cat & sudo"
-
-set PATH $HOME/.emacs.d/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin $HOME/.local/share/gem/ruby/3.0.0/bin
 # }}}
 
 # XDG-NINJA CLEANUP ----------------------------------------------------------------------- {{{
@@ -60,8 +60,13 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export WINEPREFIX="$XDG_DATA_HOME"/wine
+export GOPATH="$XDG_DATA_HOME"/go
 
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+# }}}
+
+# PATH ------------------------------------------------------------------------------------ {{{
+set PATH $HOME/.emacs.d/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin $HOME/.local/share/gem/ruby/3.0.0/bin $GOPATH/bin
 # }}}
 
 # THEME ----------------------------------------------------------------------------------- {{{
@@ -80,7 +85,7 @@ alias mixtape="clear && mpv https://soundcloud.com/bean499/likes --force-window 
 
 alias open-dashboard="~/.config/eww/scripts/open_dashboard.sh"
 
-alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
+#alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 
 alias powertop="sudo powertop"
 
@@ -88,7 +93,7 @@ alias x="startx"
 
 alias wiki="nvim '+set nonu wrap' '+VimwikiIndex'"
 
-alias todo="nvim ~/Documents/todo.md"
+alias todo="nvim ~/vimwiki/Tasks.wiki"
 
 alias ghcode=~/Documents/github-codes.sh
 
