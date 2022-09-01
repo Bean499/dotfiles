@@ -1,5 +1,13 @@
+#!/bin/sh
+monitors=$(xrandr --query | grep " connected" | wc -l)
+
+if [ "$monitors" == "1" ]; then
+	setxkbmap -layout gb
+else
+	setxkbmap -layout us
+fi
+	
 xrdb ~/.xresources &
-setxkbmap -layout us &
 feh --bg-fill $wallpaper &
 #picom --experimental-backend -b &
 dunst &
