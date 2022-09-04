@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Get full path of wallpaper
 wallpaper=$HOME"/Pictures/Wallpapers/"$1".png"

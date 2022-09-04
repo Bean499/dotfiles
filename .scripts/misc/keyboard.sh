@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 x="$(setxkbmap -query | awk 'NR == 3 {print $2 }')"
-if [ $x == "us" ]
+if [ $x = "us" ]
 then
 	setxkbmap -layout gb
 	notify-send "Keyboard layout changed" "Layout changed to English." --icon=keyboard

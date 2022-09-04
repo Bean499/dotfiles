@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 amount=$(checkupdates | wc -l)
 icon="~/.scripts/notifications/arch.png"
-if [ "$amount" == 1 ];
+if [ "$amount" = 1 ];
 then
 	notify-send "$amount update is available." "Run pac-update to update." --icon="$icon"
 elif [ "$amount" != "0" ];

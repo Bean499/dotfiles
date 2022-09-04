@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 titleold=""
 titlenew=""
@@ -8,7 +8,7 @@ do
 	titleold=$titlenew
 	titlenew=$(playerctl metadata title)
 	soundcloud=$(playerctl metadata title | grep -oi -F Soundcloud)
-	if [[ "$titleold" != "$titlenew" ]] && [[ "$soundcloud" != "Soundcloud" ]] && [[ "$soundcloud" != "SoundCloud" ]]
+	if [ "$titleold" != "$titlenew" ] && [ "$soundcloud" != "Soundcloud" ] && [ "$soundcloud" != "SoundCloud" ]
 	then
 		sleep 0.1s
 		art=$(playerctl metadata mpris:artUrl)

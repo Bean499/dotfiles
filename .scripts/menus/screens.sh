@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 # Options for powermenu
 
@@ -26,18 +26,18 @@ $monitor" | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"
 )
 
 # Do something based on selected option
-if [ "$selected_option" == "$both" ]
+if [ "$selected_option" = "$both" ]
 then
     ~/.scripts/screenlayouts/both.sh
-elif [ "$selected_option" == "$monitor" ]
+elif [ "$selected_option" = "$monitor" ]
 then
     ~/.scripts/screenlayouts/monitor.sh
-elif [ "$selected_option" == "$laptop" ]
+elif [ "$selected_option" = "$laptop" ]
 then
     ~/.scripts/screenlayouts/laptop.sh
 else
     echo "No match"
 fi
 
-source ~/.cache/wal/colors.sh
+. ~/.cache/wal/colors.sh
 feh --bg-fill $wallpaper 

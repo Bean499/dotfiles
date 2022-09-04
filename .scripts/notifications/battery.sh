@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 while true
 do
     export DISPLAY=:0.0
     battery_percent=$(acpi -b | grep -P -o '[0-9]+(?=%)')
     plugged=$(acpi -b | grep -o -F "Charging")
-    if [ "$plugged" == "Charging" ]; then
+    if [ "$plugged" = "Charging" ]; then
         if [ "$battery_percent" -gt 89 ]; then
             notify-send "Battery full." "Level: ${battery_percent}% " --icon=battery
             #paplay /usr/share/sounds/ubuntu/ringtones/Alarm\ clock.ogg

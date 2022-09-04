@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-if [[ -d "/run/media/bean/BEAN VAULT/" ]]; then
+if [ -d "/run/media/bean/BEAN VAULT/" ]; then
 	echo "BEAN VAULT is mounted, proceeding to backup."
 else
 	echo "BEAN VAULT is not mounted, mounting."
@@ -15,7 +15,7 @@ echo
 rsync -avh  ~/Documents/1\ Projects/website/ /run/media/bean/BEAN\ VAULT/backups/website/ --delete
 echo
 
-read -p "Would you like to unmount BEAN VAULT? [Y/n] " yesno
-if [[ "$yesno" != "n" ]]; then
+read -rp "Would you like to unmount BEAN VAULT? [Y/n] " yesno
+if [ "$yesno" != "n" ]; then
 	udisksctl unmount -b /dev/sdd1
 fi

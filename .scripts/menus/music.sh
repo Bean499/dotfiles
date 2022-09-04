@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 # Options for powermenu
 
@@ -28,16 +28,16 @@ $prev
 $next" | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15")
 
 # Do something based on selected option
-if [ "$selected_option" == "$prev" ]
+if [ "$selected_option" = "$prev" ]
 then
     playerctl previous
-elif [ "$selected_option" == "$playpause" ]
+elif [ "$selected_option" = "$playpause" ]
 then
     playerctl play-pause
-elif [ "$selected_option" == "$next" ]
+elif [ "$selected_option" = "$next" ]
 then
     playerctl next
-elif [ "$selected_option" == "$what" ]
+elif [ "$selected_option" = "$what" ]
 then
     ~/.scripts/notifications/whats-playing.sh
 else

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 title=$(playerctl metadata title)
 artist=$(playerctl metadata artist)
