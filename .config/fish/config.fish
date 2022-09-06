@@ -1,3 +1,4 @@
+# vim: filetype=sh
 
 #   __ _     _
 #  / _(_)___| |__  _ __ ___
@@ -95,7 +96,8 @@ alias wiki="nvim '+set nonu wrap' '+VimwikiIndex'"
 
 alias todo="nvim ~/vimwiki/Tasks.wiki"
 
-alias ghcode=~/Documents/github-codes.sh
+alias ghcode="cat ~/Documents/0\ IMPORTANT/GITHUB\ TOKEN"
+alias pypicode="cat ~/Documents/0\ IMPORTANT/PYPI\ TOKEN"
 
 alias setwall="~/.scripts/theming/wallpaper.sh"
 alias dunst-update="~/.scripts/theming/dunst-gaps.py"
