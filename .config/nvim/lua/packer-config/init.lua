@@ -53,17 +53,17 @@ return require"packer".startup(function()
 	use "glepnir/dashboard-nvim"
 
 	-- File finder
-	use {
-		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+	-- use {
+	-- 	'nvim-telescope/telescope.nvim',
+	-- 	requires = { {'nvim-lua/plenary.nvim'} }
+	-- }
 
 	-- Statusline
 	-- use "vim-airline/vim-airline"
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
+	-- use {
+	-- 	'nvim-lualine/lualine.nvim',
+	-- 	requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	-- }
 
 	-- Colourschemes
 	use "ellisonleao/gruvbox.nvim"
@@ -73,4 +73,7 @@ return require"packer".startup(function()
 	
 	-- Toggle checkboxes on hotkey
 	use "jkramer/vim-checkbox"
+
+	-- Only have cursorline for active window
+	use "sstallion/vim-cursorline"
 end	)

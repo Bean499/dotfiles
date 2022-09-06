@@ -13,19 +13,19 @@ local home = "/home/bean"
 db.custom_center = {
 	{icon = '  ',
 	desc = 'Open Vim Wiki                           ',
-	shortcut = 'LDR w w'},
+	shortcut = 'LDR o w'},
+	{icon = '  ',
+	desc = 'Open configuration files                ',
+	shortcut = 'LDR o c'},
 	{icon = '  ',
 	desc = 'Load most recent session                ',
 	shortcut = 'LDR d l'},
 	-- {icon = '  ',
 	-- desc = 'Recently opened files                   ',
 	-- shortcut = 'LDR d h'},
-	{icon = '  ',
-	desc = 'Find file                               ',
-	shortcut = 'LDR d f'},
-	{icon = '  ',
-	desc = 'Open configuration files                ',
-	shortcut = 'LDR d c'},
+	-- {icon = '  ',
+	-- desc = 'Find file                               ',
+	-- shortcut = 'LDR d f'},
 	{icon = '  ',
 	desc = 'Create New File                         ',
 	shortcut = 'LDR d n'},
@@ -42,7 +42,7 @@ db.custom_center = {
 
 -- string type
 -- db.preview_command = "cat | gay -n --period 10"
-db.preview_command = "cat | lolcat -F 0.3"
+db.preview_command = "lolcat -F 0.3"
 -- string or function type that mean in function you can dynamic generate height width
 db.preview_file_path = home .. "/.config/nvim/lua/plugin-config/dashboard.cat"
 -- number type
@@ -52,7 +52,7 @@ db.preview_file_width = 60
 
 -- db.hide_statusline      -- boolean default is true.it will hide statusline in dashboard buffer and auto open in other buffer
 -- db.hide_tabline         -- boolean default is true.it will hide tabline in dashboard buffer and auto open in other buffer
--- db.session_directory    -- string type the directory to store the session file
+db.session_directory = home .. "/.local/share/nvim/site/sessions"    -- string type the directory to store the session file
 -- db.header_pad           -- number type default is 1
 -- db.center_pad           -- number type default is 1
 -- db.footer_pad           -- number type default is 1

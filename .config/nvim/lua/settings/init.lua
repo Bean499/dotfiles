@@ -6,7 +6,7 @@ set.fileencoding = "utf-8"
 set.hidden = true
 set.spelllang = "en-gb"
 set.mouse = "a"
--- set.cursorline = true
+set.cursorline = true
 
 --Colours
 set.termguicolors = false
