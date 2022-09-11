@@ -24,7 +24,7 @@ function fish_greeting
 	#echo "" && pfetch
 	#pokemon-colorscripts -r --no-title
 	#bunnyfetch
-	cat ~/.scripts/ascii/cat-peekaboo.cat | gay -n -c 24 -i 2d --period 4 && echo
+	cat ~/.scripts/ascii/cat-peekaboo.cat | gay -g -c 24 -i 2d --period 4 && echo
 end
 
 function sudo
@@ -67,7 +67,7 @@ alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 # }}}
 
 # PATH ------------------------------------------------------------------------------------ {{{
-set PATH $HOME/.emacs.d/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin $HOME/.local/share/gem/ruby/3.0.0/bin $GOPATH/bin
+set PATH $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin $HOME/.local/share/gem/ruby/3.0.0/bin $GOPATH/bin
 # }}}
 
 # THEME ----------------------------------------------------------------------------------- {{{
@@ -80,7 +80,7 @@ alias pac-count="yay -Q | wc -l"
 alias pac-autoremove="yay -Qdtq | yay -Rs -"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
-alias screenshot="scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'"
+alias screenshot="scrot -e 'mv $f ~/pics/0\ screenshots/ 2>/dev/null'"
 
 alias mixtape="clear && mpv https://soundcloud.com/bean499/likes --force-window --script=~/.config/mpv/mpris.so --shuffle"
 
@@ -96,8 +96,8 @@ alias wiki="nvim '+set nonu wrap' '+VimwikiIndex'"
 
 alias todo="nvim ~/vimwiki/Tasks.wiki"
 
-alias ghcode="cat ~/Documents/0\ IMPORTANT/GITHUB\ TOKEN"
-alias pypicode="cat ~/Documents/0\ IMPORTANT/PYPI\ TOKEN"
+alias ghcode="cat ~/docs/0\ IMPORTANT/GITHUB\ TOKEN"
+alias pypicode="cat ~/docs/0\ IMPORTANT/PYPI\ TOKEN"
 
 alias setwall="~/.scripts/theming/wallpaper.sh"
 alias dunst-update="~/.scripts/theming/dunst-gaps.py"
@@ -125,7 +125,7 @@ alias catclock="xclock"
 # ELECTRON FORGE -------------------------------------------------------------------------- {{{
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[ -f /home/bean/Documents/Projects/chess/node_modules/tabtab/.completions/electron-forge.fish ]; and . /home/bean/Documents/Projects/chess/node_modules/tabtab/.completions/electron-forge.fish
+# [ -f /home/bean/Documents/Projects/chess/node_modules/tabtab/.completions/electron-forge.fish ]; and . /home/bean/Documents/Projects/chess/node_modules/tabtab/.completions/electron-forge.fish
 # }}}
 
 # AUTO START X ---------------------------------------------------------------------------- {{{
