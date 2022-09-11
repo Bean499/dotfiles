@@ -14,7 +14,7 @@ eww daemon &
 /usr/lib/kdeconnectd &
 
 ~/.fehbg &
-~/.scripts/screenlayouts/both.sh &
+~/.scripts/menus/screens.sh both &
 ~/.scripts/notifications/battery.sh &
 ~/.scripts/notifications/mount-notify.sh &
 #~/.scripts/notifications/now-playing.sh &
