@@ -1,10 +1,11 @@
 #!/bin/sh
 
 # Get full path of wallpaper
-wallpaper=$HOME"/Pictures/Wallpapers/"$1".png"
+walldir=$HOME'/pics/1 wallpapers'
+wallpaper="$walldir/$1.png"
 
 # Set wallpaper using pywal
-wal -i $wallpaper
+wal -i "$wallpaper"
 
 # Most of the below need to wait a bit for the wal cache to generate
 sleep 0.5s
@@ -18,4 +19,4 @@ cp ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
 ~/.scripts/theming/lockscreen.py
 xrdb ~/.xresources
 pywal-discord
-betterlockscreen -u $(cat ~/.cache/wal/wal)
+betterlockscreen -u "$wallpaper"

@@ -8,9 +8,12 @@ set.spelllang = "en-gb"
 set.mouse = "a"
 set.cursorline = true
 
---Colours
+-- Colours
 set.termguicolors = false
 vim.cmd("colorscheme wal")
+
+-- set.termguicolors = true
+-- vim.cmd("colorscheme neosolarized")
 
 --Indentation
 set.expandtab = false

@@ -9,21 +9,18 @@ end
 
 -- Leader
 vim.g.mapleader = " "
--- vim.g.mapleader = "\\"
 
--- Ranger
+-- Summon Ranger
 map("n", "<Leader>fm", ":Ranger<CR>")
-map("n", "<Leader>t", ":Telescope find_files<CR>")
+-- Summon Minimap
 map("n", "<Leader>m", ":MinimapToggle<CR>")
+-- Summon Filetree
 map("n", "<Leader>ft", ":NERDTreeToggle<CR>")
 
 -- Dashboard
-map("n", "<Leader>df", ":Telescope find_files find_command=rg,--hidden,--files<CR>")
 map("n", "<Leader>dn", ":DashboardNewFile<CR>")
--- map("n", "<Leader>dh", ":DashboardFindHistory<CR>")
--- map("n", "<Leader>dc", ":Telescope dotfiles path=/home/bean/.config<CR>")
 map("n", "<Leader>oc", ":cd ~/.config/<CR>:Ranger<CR>")
 map("n", "<Leader>ds", ":<C-u>SessionSave<CR>")
 map("n", "<Leader>dl", ":<C-u>SessionLoad<CR>")
 map("n", "<Leader>nnw", ":set nonu wrap<CR>")
-map("n", "<Leader>ow", ":set nonu wrap<CR>:VimwikiIndex<CR>")
+map("n", "<Leader>ww", ":set nonu wrap<CR>:VimwikiUISelect<CR>")

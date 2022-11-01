@@ -9,8 +9,9 @@
 # FISH FUNCTIONS -------------------------------------------------------------------------- {{{
 function fish_prompt
 	#echo -e (set_color green)" ┏"(set_color cyan) $USER@$hostname (set_color blue)"✮"(set_color cyan) (prompt_pwd) (set_color green) "\n ┗━▶ "
-	#echo -e (set_color green)$USER(set_color white)" on "(set_color green)$hostname(set_color white)" in "(set_color green)(prompt_pwd)(set_color blue)" ⟩ "
-	echo -e (set_color green)(prompt_pwd)(set_color blue)" ⟩ "
+	# echo -e (set_color green)$USER(set_color white)" on "(set_color green)$hostname(set_color white)" in "(set_color green)(prompt_pwd)(set_color blue)" ⟩ "
+	echo -e (set_color blue)"["(set_color green)$USER(set_color white)"@"(set_color green)$HOSTNAME(set_color white)":"(set_color green)(prompt_pwd)(set_color blue)"] \$ "
+	# echo -e (set_color green)(prompt_pwd)(set_color blue)" ⟩ "
 end
 
 function fish_right_prompt
@@ -25,6 +26,7 @@ function fish_greeting
 	#pokemon-colorscripts -r --no-title
 	#bunnyfetch
 	cat ~/.scripts/ascii/cat-peekaboo.cat | gay -g -c 24 -i 2d --period 4 && echo
+	# cat ~/.scripts/ascii/cat-peekaboo.cat
 end
 
 function sudo
@@ -37,6 +39,8 @@ end
 # }}}
 
 # VARIABLES ------------------------------------------------------------------------------- {{{
+export HOSTNAME="thonkbook"
+
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
@@ -50,6 +54,9 @@ export VISUAL=nvim
 export SUDO_PROMPT="What's the secret password, $USER? "
 #export SUDO_PROMPT=(echo -e (cat ~/.scripts/misc/skeleton.cat))
 #alias sudo="cat ~/.scripts/misc/sudo.cat & sudo"
+
+export PF_INFO="ascii title os kernel uptime wm shell editor"
+export PF_ASCII="tux"
 # }}}
 
 # XDG-NINJA CLEANUP ----------------------------------------------------------------------- {{{
@@ -78,9 +85,12 @@ fish_config theme choose "fish default"
 alias pac-update="yay -Syu"
 alias pac-count="yay -Q | wc -l"
 alias pac-autoremove="yay -Qdtq | yay -Rs -"
+alias pac-clear="yay -Scc"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
-alias screenshot="scrot -e 'mv $f ~/pics/0\ screenshots/ 2>/dev/null'"
+alias connect="kitty +kitten ssh"
+
+# alias screenshot="scrot && mv (/usr/bin/ls ~/*.png) ~/pics/0\ screenshots/"
 
 alias mixtape="clear && mpv https://soundcloud.com/bean499/likes --force-window --script=~/.config/mpv/mpris.so --shuffle"
 
@@ -89,12 +99,13 @@ alias open-dashboard="~/.config/eww/scripts/open_dashboard.sh"
 #alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 
 alias powertop="sudo powertop"
+alias btop="btop -t"
 
 alias x="startx"
 
 alias wiki="nvim '+set nonu wrap' '+VimwikiIndex'"
 
-alias todo="nvim ~/vimwiki/Tasks.wiki"
+alias todo="nvim ~/wiki/Tasks.wiki"
 
 alias ghcode="cat ~/docs/0\ IMPORTANT/GITHUB\ TOKEN"
 alias pypicode="cat ~/docs/0\ IMPORTANT/PYPI\ TOKEN"
@@ -103,7 +114,7 @@ alias setwall="~/.scripts/theming/wallpaper.sh"
 alias dunst-update="~/.scripts/theming/dunst-gaps.py"
 
 # Replace base commands with exa
-alias ls="exa -lah --icons --no-permissions"
+alias ls="exa -lh --icons --no-permissions"
 # alias tree=exa -a --icons --tree		# Shows hidden files
 alias tree="exa --icons --tree"			# Doesn't show hidden files
 

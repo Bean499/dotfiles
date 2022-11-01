@@ -44,6 +44,8 @@ elif chosen_theme == "wal":
 
 # config.input.media_keys = False
 
+# c.url.searchengines = {'DEFAULT': 'https://searx.org/search?q={}'}
+
 # Auto-restore tabs
 config.set("auto_save.session",True)
 

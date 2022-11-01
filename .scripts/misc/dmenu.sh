@@ -8,7 +8,7 @@
 
 test -s "$HOME"/.dmenurc && . "$HOME"/.dmenurc
 
-cmd="$(dmenu_path | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" "$@")"
+cmd="$(dmenu_path | dmenu -p ' ' -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" "$@")"
 
 case $cmd in
     *\!) "${TERMINAL:-kitty}" -e "${cmd%?}" & ;;

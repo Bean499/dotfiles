@@ -2,11 +2,15 @@ return require"packer".startup(function()
 	-- Packer
 	use "wbthomason/packer.nvim"
 
-	-- Pywal colourscheme
+	-- Colourschemes
 	use "dylanaraps/wal.vim"
+	use {
+		"svrana/neosolarized.nvim",
+		requires = { "tjdevries/colorbuddy.nvim" }
+	}
 
 	-- Lines to show indentation level
-	-- use "yggdroot/indentline"
+	-- use "lukas-reineke/indent-blankline.nvim"
 
 	-- Ranger
 	use 'francoiscabrol/ranger.vim'

@@ -13,7 +13,7 @@ local home = "/home/bean"
 db.custom_center = {
 	{icon = '  ',
 	desc = 'Open Vim Wiki                           ',
-	shortcut = 'LDR o w'},
+	shortcut = 'LDR w w'},
 	{icon = '  ',
 	desc = 'Open configuration files                ',
 	shortcut = 'LDR o c'},
@@ -40,14 +40,18 @@ db.custom_center = {
                   -- if you don't need any one of icon shortcut action ,you can ignore it.
 -- db.custom_footer  -- type can be nil,table or function(must be return table in function)
 
--- string type
+-- Image
+-- db.preview_command = "ueberzug"
+-- db.preview_file_path = home .. "/pics/a36cd2bc38961a7795f47d6341414a3c.png"
+-- db.preview_file_path = home .. "/pics/faust-love.png"
+-- db.preview_file_height = 10
+-- db.preview_file_width = 34
+
+-- Text
 -- db.preview_command = "cat | gay -n --period 10"
 db.preview_command = "lolcat -F 0.3"
--- string or function type that mean in function you can dynamic generate height width
 db.preview_file_path = home .. "/.config/nvim/lua/plugin-config/dashboard.cat"
--- number type
 db.preview_file_height = 10
--- number type
 db.preview_file_width = 60
 
 -- db.hide_statusline      -- boolean default is true.it will hide statusline in dashboard buffer and auto open in other buffer

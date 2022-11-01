@@ -104,12 +104,20 @@ bar_width = 4
 
 # trans rights 
 gradient = 1
+
 gradient_count = 4 
 gradient_color_4 = '#fcf431'
 gradient_color_3 = '#fcfcfc'
 gradient_color_2 = '#9d59d2'
 gradient_color_1 = '#282828'
  
+# gradient_count = 6
+# gradient_color_6 = '#e70001'
+# gradient_color_5 = '#f37d00'
+# gradient_color_4 = '#fdec00'
+# gradient_color_3 = '#007f26'
+# gradient_color_2 = '#004cfb'
+# gradient_color_1 = '#720682'
  
  
 [smoothing]

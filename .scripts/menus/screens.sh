@@ -13,20 +13,19 @@ if [ "$#" = "0" ]; then
 $laptop
 $monitor" | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"
 	)
-elif [ "$#" = "1" ]; then
-	selected_option=$1
 else
-	echo "Too many arguments (expected 0 or 1)"
-	selected_option=""
+	selected_option=$1
 fi
 
 # Do something based on selected option
 if [ "$selected_option" = "$both" ]; then
-    # ~/.scripts/screenlayouts/both.sh
-	xrandr --output eDP-1 --primary --mode 1920x1080 --pos 2560x0 --rotate normal --output DP-1 --mode 2560x1080 --pos 0x0 --rotate normal --output HDMI-1 --off
+	if [ "$2" = "--left" ]; then
+		xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --mode 2560x1080 --pos 1920x0 --rotate normal --output HDMI-1 --off
+	else
+		xrandr --output eDP-1 --primary --mode 1920x1080 --pos 2560x0 --rotate normal --output DP-1 --mode 2560x1080 --pos 0x0 --rotate normal --output HDMI-1 --off
+	fi
 	setxkbmap -layout us -option caps:escape
 elif [ "$selected_option" = "$monitor" ]; then
-    # ~/.scripts/screenlayouts/monitor.sh
 	xrandr --output eDP-1 --primary --off --output DP-1 --mode 2560x1080 --pos 0x0 --rotate normal --output HDMI-1 --off
 	setxbmap -layout us -option caps:escape
 elif [ "$selected_option" = "$laptop" ]; then
