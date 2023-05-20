@@ -2,21 +2,20 @@
 
 xrdb ~/.xresources &
 feh --bg-fill $wallpaper &
-#picom --experimental-backend -b &
+# picom --experimental-backend -b &
 dunst &
 /usr/lib/geoclue-2.0/demos/agent &
 redshift &
-# mpd ~/.config/mpd/mpd.conf &
-mpDris2 &
-#redshift-gtk &
-#tor &
-#nm-applet &
-xfce4-power-manager &
+# mpDris2 &
+# redshift-gtk &
+# nm-applet &
+# xfce4-power-manager &
 eww daemon &
-conky -c ~/.config/conky/todo &
-/usr/lib/kdeconnectd &
+# conky -c ~/.cache/wal/music &
+# /usr/lib/kdeconnectd &
 
 ~/.fehbg &
+# ~/.scripts/menus/screens.sh both &
 ~/.scripts/menus/screens.sh both --left &
 ~/.scripts/notifications/battery.sh &
 ~/.scripts/notifications/mount-notify.sh &
@@ -24,3 +23,5 @@ conky -c ~/.config/conky/todo &
 #~/.scripts/notifications/update-notify.sh
 
 #notify-send -t 0 "Don't forget to check your to-do list!"
+
+xrdb ~/.xresources

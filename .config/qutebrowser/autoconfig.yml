@@ -7,18 +7,24 @@
 config_version: 2
 settings:
   content.media.audio_capture:
+    https://discord.com: true
     https://meet.google.com: true
     https://teams.microsoft.com: true
   content.media.audio_video_capture:
     https://meet.google.com: true
     https://teams.microsoft.com: true
   content.media.video_capture:
+    https://discord.com: true
     https://meet.google.com: true
     https://teams.microsoft.com: true
   content.notifications.enabled:
+    https://en.picmix.com: false
     https://euw.op.gg: false
     https://meet.google.com: true
     https://play.pokemonshowdown.com: false
+    https://tetr.io: false
+    https://top.gg: true
+    https://www.facebook.com: true
     https://www.netflix.com: false
     https://www.pcguide.com: false
     https://www.reddit.com: false

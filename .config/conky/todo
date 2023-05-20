@@ -1,5 +1,5 @@
 conky.config = {
-	alignment = 'top_left',
+	alignment = 'top_right',
 	xinerama_head = 1,
 	background = true,
 	cpu_avg_samples = 2,
@@ -14,8 +14,11 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 	use_xft = true,
-	font = 'CozetteVector:size=12',
+	font = 'monospace:size=12',
+--	gap_x = 57,
+--	gap_y = 57,
 	gap_x = 43,
+--	gap_y = 43,
 	gap_y = 61,
 	no_buffers = true,
 --	minimum_width = 160, minimum_height = 5,
@@ -27,7 +30,7 @@ conky.config = {
 	out_to_stderr = false,
 	extra_newline = false,
 	own_window = true,
-	own_window_colour = '#111313',
+	own_window_colour = '#1e1f3c',
 	own_window_class = 'Conky',
 	own_window_type = 'override', --For tilling window managers
 --	own_window_type = 'desktop',
@@ -68,7 +71,7 @@ conky.config = {
 
 }
 conky.text = [[
-$color4${color3}TODO $color
+$color4$alignc${color3}TODO $color
 ${color3}$hr
-${color3}${execi 30 cat /home/bean/TODO}
+${color3}${execi 30 /home/bean/.scripts/misc/todo.sh}
 ]]

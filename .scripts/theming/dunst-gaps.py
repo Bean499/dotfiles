@@ -19,7 +19,7 @@ def main():
 
     # Default size of bar and gaps
     barheight = 18
-    gaps = 25
+    gaps = 24
 
     # Check lines of gaps file for gaps being set
     if theme_file != None:

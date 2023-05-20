@@ -23,9 +23,11 @@ function fish_greeting
 	#beanfetch -f nonbinary
 	#catfetch
 	#echo "" && pfetch
-	#pokemon-colorscripts -r --no-title
+	# pokemon-colorscripts -r --no-title
+    # pokemon-colorscripts -n ponyta --form galar -s --no-title
 	#bunnyfetch
-	cat ~/.scripts/ascii/cat-peekaboo.cat | gay -g -c 24 -i 2d --period 4 && echo
+	# cat ~/.scripts/ascii/cat-peekaboo.cat | gay -g -c 24 -i 2d --period 4 && echo
+	# cat ~/.scripts/ascii/cat-peekaboo.cat | gay -n -c 24 -i 2d --period 10 && echo
 	# cat ~/.scripts/ascii/cat-peekaboo.cat
 end
 
@@ -90,13 +92,11 @@ alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d 
 
 alias connect="kitty +kitten ssh"
 
-# alias screenshot="scrot && mv (/usr/bin/ls ~/*.png) ~/pics/0\ screenshots/"
+alias catsay="cowsay -f cat-peekaboo"
 
 alias mixtape="clear && mpv https://soundcloud.com/bean499/likes --force-window --script=~/.config/mpv/mpris.so --shuffle"
 
 alias open-dashboard="~/.config/eww/scripts/open_dashboard.sh"
-
-#alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 
 alias powertop="sudo powertop"
 alias btop="btop -t"
@@ -105,16 +105,14 @@ alias x="startx"
 
 alias wiki="nvim '+set nonu wrap' '+VimwikiIndex'"
 
-alias todo="nvim ~/wiki/Tasks.wiki"
-
+# Output security codes
 alias ghcode="cat ~/docs/0\ IMPORTANT/GITHUB\ TOKEN"
 alias pypicode="cat ~/docs/0\ IMPORTANT/PYPI\ TOKEN"
 
-alias setwall="~/.scripts/theming/wallpaper.sh"
-alias dunst-update="~/.scripts/theming/dunst-gaps.py"
-
 # Replace base commands with exa
 alias ls="exa -lh --icons --no-permissions"
+alias ls="exa -lha --icons --no-permissions"
+alias ld="exa -lhD --icons --no-permissions"
 # alias tree=exa -a --icons --tree		# Shows hidden files
 alias tree="exa --icons --tree"			# Doesn't show hidden files
 
@@ -150,3 +148,5 @@ if test -z "$DISPLAY"
 	end
 end
 # }}}
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin $PATH /home/bean/.ghcup/bin # ghcup-env

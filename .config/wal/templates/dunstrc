@@ -24,7 +24,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 330
+    width = 400
 
     # The maximum height of a single notification, excluding the frame.
     height = 300 
@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 25x43
+    offset = 0x24
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -168,7 +168,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 200
 
     # Paths to default icons.
     icon_path="/usr/share/icons/ePapirus-Dark/48x48@2x/apps:/usr/share/icons/ePapirus-Dark/48x48@2x/categories:/usr/share/icons/ePapirus-Dark/48x48@2x/devices:/usr/share/icons/ePapirus-Dark/48x48@2x/places:/usr/share/icons/ePapirus-Dark/48x48@2x/mimetypes:/usr/share/icons/ePapirus-Dark/48x48@2x/status:/usr/share/icons/ePapirus-Dark/48x48@2x/emotes:/usr/share/icons/ePapirus-Dark/48x48@2x/actions:/usr/share/icons/ePapirus-Dark/48x48@2x/emblems"

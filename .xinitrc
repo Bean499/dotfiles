@@ -8,5 +8,9 @@
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-exec dwm > ~/.config/dwm/dwm.log
-# exec awesome
+# exec dwm > ~/.config/dwm/dwm.log
+# exec i3
+exec jwm
+# exec gnome-session
+# 2bwm > ~/.config/2bwm/2bwm.log &
+# exec redshift

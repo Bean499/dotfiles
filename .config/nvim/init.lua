@@ -1,29 +1,34 @@
+vim.defer_fn(function()
+  pcall(require, "impatient")
+end, 0)
 
---                        _           
---  _ __   ___  _____   _(_)_ __ ___  
--- | '_ \ / _ \/ _ \ \ / / | '_ ` _ \ 
--- | | | |  __/ (_) \ V /| | | | | | |
--- |_| |_|\___|\___/ \_/ |_|_| |_| |_|
+require "core"
+require "core.options"
 
+-- setup packer + plugins
+local fn = vim.fn
+local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
 
--- Main Files
-require("settings")
-require("keys")
-require("packer-config")
+if fn.empty(fn.glob(install_path)) > 0 then
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
+  print "Cloning packer .."
+  fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
 
--- Plugins
-require("plugin-config.nvim-autopairs")
-require("plugin-config.nvim-comment")
-require("plugin-config.dashboard-neo")
-require("plugin-config.ranger-vim")
--- require("plugin-config.lualine-nvim")
-require("plugin-config.gitsigns-nvim")
-require("plugin-config.minimap-vim")
-require("plugin-config.vim-checkbox")
-require("plugin-config.vim-wiki")
--- require("plugin-config.neosolarized-nvim")
-require("plugin-config.colorbuddy")
+  -- install plugins + compile their configs
+  vim.cmd "packadd packer.nvim"
+  require "plugins"
+  vim.cmd "PackerSync"
 
--- LSP
-require("lsp-config.language-servers")
-require("lsp-config.nvim-cmp")
+  -- install binaries from mason.nvim & tsparsers
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "PackerComplete",
+    callback = function()
+      vim.cmd "bw | silent! MasonInstallAll" -- close packer window
+      require("packer").loader "nvim-treesitter"
+    end,
+  })
+end
+
+pcall(require, "custom")
+
+require("core.utils").load_mappings()
