@@ -8,7 +8,7 @@ dunst &
 redshift &
 # mpDris2 &
 # redshift-gtk &
-# nm-applet &
+nm-applet &
 # xfce4-power-manager &
 eww daemon &
 # conky -c ~/.cache/wal/music &
